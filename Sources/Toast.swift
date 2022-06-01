@@ -54,6 +54,11 @@ open class Toast: Operation {
 
   @objc public var view: ToastView = ToastView()
 
+  @discardableResult
+  @objc public func posBottom(p: Bool) -> Self {
+    view.isPosBottom = p
+    return self
+  }
 
   // MARK: Initializing
 

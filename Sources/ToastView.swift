@@ -150,7 +150,9 @@ open class ToastView: UIView {
     self.textAlignment = .center
     return self
   }()
-
+  
+  /// view position
+  open var isPosBottom: Bool = true
 
   // MARK: Initializing
 
@@ -210,7 +212,9 @@ open class ToastView: UIView {
 
     let backgroundViewSize = self.backgroundView.frame.size
     x = (width - backgroundViewSize.width) * 0.5
-    y = height - (backgroundViewSize.height + y)
+    if isPosBottom {
+      y = height - (backgroundViewSize.height + y)
+    }
     self.frame = CGRect(
       x: x,
       y: y,
